@@ -106,3 +106,23 @@ form.addEventListener("submit", (event) => {
   event.target.reset();
   event.target.elements[0].focus();
 });
+
+const questionText = document.querySelector('[data-js="questionText"]');
+const answerText = document.querySelector('[data-js="answerText"]');
+
+const questionCharacters = document.querySelector(
+  '[data-js="questionCharacters"]'
+);
+const answerCharacters = document.querySelector('[data-js="answerCharacters"]');
+
+questionText.addEventListener("input", () => {
+  questionCharacters.textContent = `${
+    150 - questionText.value.length
+  } characters left`;
+});
+
+answerText.addEventListener("input", () => {
+  answerCharacters.textContent = `${
+    150 - answerText.value.length
+  } characters left`;
+});
