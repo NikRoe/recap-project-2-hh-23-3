@@ -30,6 +30,10 @@ form.addEventListener("submit", (event) => {
   answer.setAttribute("data-js", "answer");
   answer.textContent = data.answer;
 
+  answerButton.addEventListener("click", () => {
+    answer.classList.toggle("card__answer--active");
+  });
+
   const tagList = document.createElement("ul");
   tagList.classList.add("card__tag-list");
 
@@ -47,6 +51,10 @@ form.addEventListener("submit", (event) => {
   bookmarkButton.setAttribute("aria-label", "bookmark");
   bookmarkButton.setAttribute("data-js", "bookmark");
   bookmarkContainer.append(bookmarkButton);
+
+  bookmarkButton.addEventListener("click", () => {
+    bookmarkButton.classList.toggle("bookmark--active");
+  });
 
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.classList.add("bookmark__icon");
